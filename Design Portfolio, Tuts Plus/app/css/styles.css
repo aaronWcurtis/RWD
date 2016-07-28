@@ -1,0 +1,273 @@
+/* Eric Meyer Reset http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Fonts and General Styles */
+html, body, ul, li, h1, h2, h3, h4, h5, h6, img, p {
+  color: #777777;
+  font-family: Arial, Helvetica, sans-serif; }
+
+body {
+  letter-spacing: 0.0125em;
+  min-width: 320px; }
+
+li a {
+  text-decoration: none; }
+
+h2 {
+  font-size: 2.625em;
+  font-weight: normal;
+  color: #e46965;
+  margin: 15px 0; }
+
+h3 {
+  font-size: 1.3125em;
+  font-weight: bold; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "alverata-informal-pe", sans-serif; }
+
+p {
+  font-size: 1.125em; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto; }
+
+/*----- Navigation Styles -----*/
+nav {
+  background-color: #dadada;
+  height: 40px; }
+  nav .container {
+    display: flex;
+    justify-content: space-between; }
+    nav .container .nav-list, nav .container .social-list {
+      height: 40px;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center; }
+      nav .container .nav-list li a, nav .container .social-list li a {
+        color: #fff;
+        text-transform: uppercase; }
+    nav .container .nav-list li {
+      margin-right: 1.25em; }
+    nav .container .social-list li {
+      margin-left: 1.25em; }
+
+/*----- HEADER -----*/
+header {
+  padding: 1.875em 0 2.5em 0; }
+  header h1, header h3 {
+    font-weight: normal;
+    text-align: center; }
+  header h1 {
+    font-size: 2.625em;
+    margin-bottom: 5px; }
+  header h3 {
+    font-size: 1.25em;
+    color: #e46965; }
+
+/*----- FEATURE -----*/
+.feature {
+  background-color: #363636; }
+  .feature .feature-list {
+    background: url("../images/feature-bg.jpg") top center no-repeat;
+    height: 300px;
+    display: flex; }
+    .feature .feature-list li {
+      width: 33.33333%;
+      border-left: 1px solid white;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      align-items: center; }
+      .feature .feature-list li:last-child {
+        border-right: 1px solid white; }
+  .feature .feature-title {
+    color: #fff;
+    opacity: 0.5;
+    font-size: 1.25em;
+    font-weight: normal;
+    margin-top: 20px;
+    transition: opacity .5s ease-in-out; }
+    .feature .feature-title:hover {
+      opacity: 1; }
+
+/*----- BODY TEXT -----*/
+.body-text h2 {
+  margin: 25px 0 25px 0; }
+
+.body-text p {
+  margin: 0 0 24px 0; }
+
+/*----- PORTFOLIO -----*/
+.portfolio-samples {
+  background-color: #dadada;
+  padding: 0.3125em 0 1.25em 0; }
+  .portfolio-samples .portfolio-list {
+    display: flex;
+    justify-content: space-between; }
+    .portfolio-samples .portfolio-list li {
+      width: 210px;
+      height: 210px;
+      display: flex;
+      align-items: flex-end; }
+    .portfolio-samples .portfolio-list li a {
+      color: #fff; }
+    .portfolio-samples .portfolio-list span {
+      background-color: rgba(0, 0, 0, 0.5); }
+  .portfolio-samples .port-laptops {
+    background: url("../images/laptops.jpg") -225px -16px no-repeat; }
+  .portfolio-samples .port-acme {
+    background: url("../images/acmelogo.gif") -240px -55px no-repeat; }
+  .portfolio-samples .port-demoreel {
+    background: url("../images/tablet.jpg") -200px -50px no-repeat; }
+  .portfolio-samples .port-logo {
+    background: url("../images/alogo.gif") -260px -120px no-repeat; }
+  .portfolio-samples .caption {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 5px;
+    justify-content: space-between; }
+
+/*----- FOOTER -----*/
+footer {
+  background-color: #252525;
+  padding: 20px 0 100px 0;
+  color: #9d9d9d;
+  position: relative; }
+  footer h3 {
+    color: #e46965;
+    margin: 10px 0;
+    font-size: 1.5em; }
+  footer .container {
+    display: flex;
+    justify-content: flex-end; }
+  footer .col-one-third {
+    flex-grow: 1;
+    max-width: 300px;
+    margin-left: 20px; }
+  footer dt {
+    font-size: 0.875em;
+    font-weight: bold; }
+  footer dd {
+    font-size: 0.75em;
+    font-style: italic;
+    margin-bottom: 16px; }
+    footer dd:last-of-type {
+      margin-bottom: 0; }
+  footer address {
+    font-size: 0.875em; }
+    footer address a {
+      font-style: italic;
+      color: #9d9d9d;
+      text-decoration: none; }
+      footer address a:hover {
+        text-decoration: underline; }
+  footer .registration form {
+    display: flex;
+    flex-flow: column nowrap; }
+  footer .registration input {
+    box-sizing: border-box;
+    width: 300px;
+    height: 32px;
+    margin-bottom: 18px;
+    background-color: #363636;
+    border: 1px solid #6d6d6d;
+    padding: 10px;
+    font-size: 1em; }
+  footer .registration button {
+    width: 300px;
+    height: 32px;
+    background-color: #e46965;
+    border: 0;
+    color: #fff;
+    font-size: 1em;
+    font-family: 'alverata-informal-pe', sans-serif; }
+  footer .copyright {
+    display: flex;
+    width: 100%;
+    background-color: #000;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    align-items: center;
+    justify-content: center; }
+
+/*----- RESPONSIVE -----*/
+@media (max-width: 899px) {
+  .container {
+    padding: 0 10px; }
+  /*----- FEATURE -----*/
+  .feature .feature-list {
+    margin: 0 10px;
+    padding: 0; }
+  /*----- PORTFOLIO -----*/
+  .portfolio-list {
+    width: 100%; }
+    .portfolio-list li {
+      width: 25%;
+      padding: 0;
+      margin: 0 0 8px 0; }
+      .portfolio-list li span {
+        width: 100%; } }
+
+@media (max-width: 722px) {
+  /*----- PORTFOLIO -----*/
+  .portfolio-samples {
+    padding: .3125em 0 0 0; }
+    .portfolio-samples .portfolio-list {
+      justify-content: flex-start;
+      flex-flow: row wrap; }
+      .portfolio-samples .portfolio-list li {
+        width: 100%; }
+      .portfolio-samples .portfolio-list .port-laptops {
+        background: url("../images/laptops.jpg") center center no-repeat; }
+      .portfolio-samples .portfolio-list .port-acme {
+        background: url("../images/acmelogo.gif") center center no-repeat; }
+      .portfolio-samples .portfolio-list .port-demoreel {
+        background: url("../images/tablet.jpg") center -50px no-repeat; }
+      .portfolio-samples .portfolio-list .port-logo {
+        background: url("../images/alogo.gif") center center no-repeat; } }
+
+@media (max-width: 700px) {
+  /*----- FOOTER -----*/
+  footer .container {
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    footer .container .col-one-third {
+      margin-bottom: 5px; } }
