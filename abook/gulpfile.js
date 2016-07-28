@@ -1,24 +1,16 @@
-// Required //
+// Required
 var gulp = require('gulp'),
-		//runSequence = require('run-sequence'),
 		del = require('del'),
 		minifyCss = require('gulp-minify-css'),
 		rename = require('gulp-rename'),
-		//sass = require('gulp-sass'),
 		plumber = require('gulp-plumber'),
 		autoprefixer = require('gulp-autoprefixer'),
 		browserSync = require('browser-sync'),
 		reload = browserSync.reload
-		//sass = require('gulp-sass')
+		sass = require('gulp-sass')
 		uglify = require('gulp-uglify'),
 		imagemin = require('gulp-imagemin'),
 		pngquant = require('imagemin-pngquant');
-
-// HTML Tasks //
-gulp.task('html', function() {
-	gulp.src('./index.html')
-	.pipe(reload({stream:true}));
-});
 
 // Task to minify images and pipe them into build folder
 gulp.task('imagemin', function() {
@@ -31,29 +23,36 @@ gulp.task('imagemin', function() {
 		.pipe(gulp.dest('build/images/'));
 });
 
+// HTML Tasks
+gulp.task('html', function() {
+	gulp.src('./index.html')
+	.pipe(reload({stream:true}));
+});
 
-// Sass Tasks //
-//gulp.task('sass', function() {
-//	gulp.src('app/sass/*.sass')
-//		.pipe(plumber())
-//		.pipe(sass())
-//		.pipe(gulp.dest('app/css'))
-//		.pipe(reload({stream:true}));
-//})
+// Sass Tasks, convert Sass to CSS
+gulp.task('sass', function() {
+	gulp.src('app/sass/styles.sass')
+		.pipe(plumber())
+		.pipe(sass())
+		.pipe(gulp.dest('app/css'))
+		.pipe(reload({stream:true}));
+})
 
-
-// Stylesheet Tasks //
+// Task to minify the CSS, and then autoprefix it
 gulp.task('styles', function() {
 	gulp.src(['app/css/**/*.css', '!app/css/**/*.min.css'])
 		.pipe(plumber())
 		.pipe(rename({suffix: '.min'}))
 		.pipe(minifyCss())
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			cascade: false
+		}))
 		.pipe(gulp.dest('app/css'))
 		.pipe(reload({stream:true}));
 });
 
-
-// Script Tasks //
+// Script Tasks, minify the JS files except those already minified
 gulp.task('scripts', function() {
 	gulp.src(['app/js/**/*.js', '!app/js/**/*.min.js'])
 		.pipe(plumber())
@@ -64,7 +63,7 @@ gulp.task('scripts', function() {
 })
 
 
-// Browser Sync Tasks //
+// Browser Sync Tasks to auto refresh page
 gulp.task('browserSync', function() {
 	browserSync({
 		server:{
@@ -74,30 +73,24 @@ gulp.task('browserSync', function() {
 });
 
 
-// Watch Tasks //
+// Watch Tasks to watch certain files for updates
 gulp.task('watch', function() {
-	//gulp.watch('app/sass/**/*.sass', ['sass']);
+	gulp.watch('*.html', ['html']);
+	gulp.watch('app/sass/**/*.sass', ['sass']);
 	gulp.watch('app/css/**/*.css', ['styles']);
-	//gulp.watch('app/js/**/*.js', ['scripts']);
-	gulp.watch('app/**/*.html', ['html']);
+	gulp.watch('app/js/**/*.js', ['scripts']);
+
 })
 
-
-// Old Build Tasks //
-
-
-
-// ////////////////////////////////////////////
 // Default Tasks //
-///////////////////////////////////////////////
-gulp.task('default', ['scripts', 'html', 'browserSync', 'watch']);
+gulp.task('default', ['sass', 'scripts', 'html', 'browserSync', 'watch']);
+
 
 // Build Tasks for Production time
-
 // buildFilesFoldersRemove => list of files to remove when running final build
 var config = {
 	buildFilesFoldersRemove:[
-		// 'build/sass/',
+		'build/sass/',
 		'build/js/!(*.min.js)',
 		'build/css/!(*.min.css)'
 	]

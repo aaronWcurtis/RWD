@@ -1,0 +1,241 @@
+@font-face {
+  font-family: 'MyWebFont';
+  src: url(/fonts/garamond-pro-9.otf); }
+
+@font-face {
+  font-family: 'MyWebFont2';
+  src: url(/fonts/garamond-pro-1.otf); }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "MyWebFont", "Adobe-Garamond-Pro", Georgia, serif;
+  font-weight: 300;
+  font-size: 16px;
+  background-color: #FBFAF5;
+  color: #38341c; }
+
+#page {
+  padding: 0 0 50px 0;
+  max-width: 950px;
+  margin: 0 auto; }
+
+header {
+  border-bottom: 2px solid #D4583c;
+  padding: 50px 0 15px 0; }
+  header h1 {
+    color: #222222;
+    text-align: center; }
+    header h1 > * {
+      transition: font-size .25s ease-in-out;
+      -o-transition: font-size .25s ease-in-out;
+      -moz-transition: font-size .25s ease-in-out;
+      -webkit-transition: font-size .25s ease-in-out; }
+  header .introducing {
+    font-size: 36px;
+    line-height: 48px;
+    font-family: 'adobe-garamond-pro',sans-serif;
+    font-weight: 300; }
+  header .the-novel {
+    font-size: 60px;
+    line-height: 60px;
+    font-family: "Adelle", sans-serif;
+    text-transform: uppercase; }
+
+/* Intro Section*/
+.intro {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: justify;
+  margin: 30px 0 20px 0; }
+  .intro .book-image {
+    display: none; }
+  .intro .columns {
+    margin: 0 2% 0 2%;
+    -webkit-column-count: 0;
+    -moz-column-count: 0;
+    column-count: 0;
+    column-gap: 15px;
+    font-size: 16px;
+    text-indent: 15px;
+    line-height: 21px; }
+    .intro .columns p:first-child {
+      text-indent: 0; }
+    .intro .columns p:first-of-type::first-letter {
+      font-weight: bold;
+      font-size: 72px;
+      line-height: 55px;
+      margin-right: 3px;
+      padding: 4px;
+      font-family: 'MyWebFont', sans-serif;
+      float: left; }
+
+/* Book Type Section*/
+.book-types-header {
+  border-top: 1px solid #D2D1CD;
+  border-bottom: 1px solid #D2D1CD;
+  font-size: 18px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: 300;
+  font-style: italic;
+  font-variant: small-caps;
+  margin: 30px 0 20px 0;
+  padding: 12px 0; }
+
+.book-types {
+  display: flex;
+  flex-flow: column nowrap; }
+  .book-types .book-1, .book-types .book-2, .book-types .book-3, .book-types .book-4,
+  .book-types .book-5, .book-types .book-6 {
+    padding: 20px 5px 20px 5px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: justify; }
+  .book-types p {
+    margin: 0 0 10px 0; }
+  .book-types span.example {
+    font-size: 12px;
+    margin: 10px 0 0 0;
+    padding: 20px 0 0 0; }
+    .book-types span.example a {
+      color: #D4583c;
+      background-color: #F1F0EB;
+      font-style: italic; }
+
+.book-1, .book-2, .book-3, .book-4, .book-5, .book-6 {
+  border-bottom: 1px solid #D2D1CD; }
+
+.title {
+  font-family: "Adelle", Sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0px 0 5px 0; }
+
+/* Book Time Section*/
+.book-time {
+  background-color: #EBEAE4;
+  margin: 40px 0 50px 0;
+  padding: 20px; }
+  .book-time h4 {
+    font-family: 'MyWebFont2';
+    text-align: center;
+    padding: 0 0 12px 0;
+    margin: 0 0 15px 0;
+    border-bottom: 1px solid #D2D1CD;
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 18px; }
+  .book-time p {
+    text-indent: 15px;
+    font-size: 14px;
+    line-height: 18px; }
+  .book-time .reading-columns {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    column-gap: 0; }
+
+/* How-To Section*/
+.how-to {
+  padding: 20px;
+  border-bottom: 1px solid #D2D1CD; }
+  .how-to p {
+    text-align: justify; }
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  flex: row wrap;
+  padding: 5px 20px 0 2px; }
+  .footer p {
+    font-size: 11px;
+    line-height: 14px; }
+
+@media only screen and (min-width: 480px) {
+  header .introducing {
+    font-size: 48px;
+    line-height: 60px; }
+  header .the-novel {
+    font-size: 72px;
+    line-height: 72px; }
+  /* Intro Section*/
+  .intro .columns {
+    font-size: 16px; }
+  /* Book Types Section*/
+  .book-types {
+    flex-flow: row wrap; }
+  .book-1, .book-2, .book-3, .book-4, .book-5, .book-6 {
+    flex: 1 1 50%; }
+  .book-1 {
+    border-right: 1px solid #D2D1CD; }
+  .book-3 {
+    border-right: 1px solid #D2D1CD; }
+  .book-1, .book-3 {
+    border-bottom: 1px solid #D2D1CD;
+    border-bottom: 1px solid #D2D1CD; }
+  .book-2, .book-4 {
+    border-bottom: 1px solid #D2D1CD; }
+  .book-5 {
+    border-right: 1px solid #D2D1CD;
+    border-bottom: 0; }
+  .book-6 {
+    border-bottom: 0; }
+  /* Book Time Section */
+  .book-time .reading-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    column-gap: 15px; } }
+
+@media only screen and (min-width: 768px) {
+  header {
+    padding: 90px 0 15px 0; }
+    header h1 {
+      text-align: left; }
+      header h1 .introducing {
+        padding-left: 65px; }
+      header h1 .the-novel {
+        padding-left: 90px; }
+  /* Intro Section */
+  .intro {
+    display: flex;
+    flex-flow: row nowrap; }
+    .intro .book-image {
+      padding-left: 20px;
+      display: block;
+      align-self: flex-end;
+      flex: 1 1 33%; }
+    .intro .columns {
+      flex: 3 1 67%;
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      column-gap: 25px;
+      margin: 0 1% 0 0; }
+  /* Book Types Section */
+  .book-1, .book-2, .book-3, .book-4, .book-5, .book-6 {
+    flex: 1 1 33.333%; }
+  .book-1 {
+    border-right: 1px solid #D2D1CD; }
+  .book-2 {
+    border-right: 1px solid #D2D1CD; }
+  .book-3 {
+    border-right: 0; }
+  .book-4 {
+    border-right: 1px solid #D2D1CD;
+    border-bottom: 0; }
+  .book-5 {
+    border-bottom: 0; }
+  /* Book Time Section */
+  .book-time .reading-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    column-gap: 15px; } }
